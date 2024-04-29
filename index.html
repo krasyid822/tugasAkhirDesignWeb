@@ -36,14 +36,19 @@
             border: 10px solid red;
             font-family: "Jersey 25";
         }
+        
     </style>
+    
 </head>
 <body>
     <script>
-        alert("Selamat datang di web saya!");
         var nama = prompt("Masukkan nama anda: ");
-        alert("Selamat datang di web kami, " + nama + "!");
-        document.write("<h1>Home - " + nama);
+        alert("Selamat datang di web interaktif ini, " + nama + "!\nSemoga Anda bersenang-senang di sini.");
+        //document.write("<h1>Home - " + nama);
+        window.onload = function () {
+          var welcomeMessage = document.getElementById("home-nama");
+          welcomeMessage.innerHTML = "MNotR - Home " + nama;
+        };
     </script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Jersey+25&display=swap');
@@ -55,29 +60,146 @@
         .jersey {
         font-family: "Jersey 25", sans-serif;
         }
+        h6 {
+            font-family: "Jersey 25", sans-serif;
+            font-size: 15px;
+        }
+        /* style.css */
+
+/* Container that triggers the hover effect */
+.hover-container {
+    position: relative;
+    display: inline-block;
+    padding: 0px;
+    cursor: pointer;
+}
+
+/* Popup window styling */
+.popup {
+    display: none; /* Initially hidden */
+    position: absolute;
+    top: 100%; /* Position the popup below the container */
+    left: 50%; /* Center the popup horizontally */
+    transform: translateX(-50%);
+    padding: 10px;
+    background-color: black;
+    color: yellowgreen;
+    border: 1px solid red;
+    border-radius: 5px;
+    white-space: nowrap; /* Ensure content stays in one line */
+}
+
+/* Show the popup when the container is hovered */
+.hover-container:hover .popup {
+    display: block;
+}
+
         </style>
-    <h1 class="jersey-25-regular">Mini Note Research</h1>
-    
+    <h1 id="home-nama" class="jersey-25-regular"></h1>
+    <h6><center>Sebuah website yang berisi catatan pendek penulis tentang hasil pengamatannya, "Mini Note Research (MNotR)". Didesain untuk seinteraktif mungkin dengan pengguna, dengan penambahaan tools yang tersembunyi diantara mysterybox di bawah</h6>
     <div>
         <a href="projectUtama.htm"><h1 class="a">Start</h1></a>
     </div>
-    <div>
+    <div class="hover-container">
         <h1 class="b">*_*</h1>
+        <div class="popup">
+            <b>*_*</b> Mini Notepad:<br>
+            <textarea name="text" id="text" cols="16" rows="2" placeholder="Ketikkan apa saja..."></textarea>
+        </div>
     </div>
-    <div>
+    <div class="hover-container">
         <h1 class="c">=-=</h1>
+        <div class="popup">
+            <b>=-=</b> Calculator:<br>
+            <input type="text" id="calc" placeholder="0" readonly><br>
+            <button onclick="calc.value += '1'">1</button>
+            <button onclick="calc.value += '2'">2</button>
+            <button onclick="calc.value += '3'">3</button>
+            <button onclick="calc.value += '4'">4</button>
+            <button onclick="calc.value += '5'">5</button><br>
+            <button onclick="calc.value += '6'">6</button>
+            <button onclick="calc.value += '7'">7</button>
+            <button onclick="calc.value += '8'">8</button>
+            <button onclick="calc.value += '9'">9</button>
+            <button onclick="calc.value += '0'">0</button><br>
+            <button onclick="calc.value += '+'">+</button>
+            <button onclick="calc.value += '-'">-</button>
+            <button onclick="calc.value += '*'">*</button>
+            <button onclick="calc.value += '/'">/</button>
+            <button onclick="calc.value += '.'">.</button><br>
+            <button onclick="calc.value = calc.value.slice(0, -1)">DEL</button>
+            <button onclick="calc.value = ''">C</button>
+            <button onclick="calc.value = eval(calc.value)">=</button>
+
+        </div>
     </div>
-    <div>
+    <div class="hover-container">
         <h1 class="b">*0*</h1>
+        <div class="popup">
+            <b>*0*</b> Random Number:<br>
+            <input type="text" id="random" placeholder="0" readonly><br>
+            <button onclick="random.value = Math.floor(Math.random() * 100)">Random</button>
+        </div>
     </div>
-    <div>
+    <div class="hover-container">
         <h1 class="b">*_,</h1>
+        <div class="popup">
+            <b>*_,</b> Clock:<br>
+            <p id="clock"></p>
+            <script>
+                var clock = document.getElementById("clock");
+                function showTime() {
+                    var date = new Date();
+                    var h = date.getHours();
+                    var m = date.getMinutes();
+                    var s = date.getSeconds();
+                    var session = "AM";
+                    if (h == 0) {
+                        h = 12;
+                    }
+                    if (h > 12) {
+                        h = h - 12;
+                        session = "PM";
+                    }
+                    h = (h < 10) ? "0" + h : h;
+                    m = (m < 10) ? "0" + m : m;
+                    s = (s < 10) ? "0" + s : s;
+                    var time = h + ":" + m + ":" + s + " " + session;
+                    clock.innerText = time;
+                    clock.textContent = time;
+                    setTimeout(showTime, 1000);
+                }
+                showTime();
+            </script>
+
+        </div>
     </div>
-    <div>
+    <div class="hover-container">
         <h1 class="b">-_*</h1>
+        <div class="popup">
+            ???
+        </div>
     </div>
-    <div>
+    <div class="hover-container">
         <h1 class="b">-_-</h1>
+        <div class="popup">
+            <b>-_-</b> Date:<br>
+            <p id="date"></p>
+            <script>
+                var date = document.getElementById("date");
+                function showDate() {
+                    var dateNow = new Date();
+                    var day = dateNow.getDate();
+                    var month = dateNow.getMonth() + 1;
+                    var year = dateNow.getFullYear();
+                    var fullDate = day + "/" + month + "/" + year;
+                    date.innerText = fullDate;
+                    date.textContent = fullDate;
+                }
+                showDate();
+            </script>
+
+        </div>
     </div>
     <div>
         <h1 class="b">*_*</h1>
@@ -138,6 +260,121 @@
     </div>
     <div>
         <h1 class="b">*_*</h1>
+    </div>
+    <div>
+        <h1 class="b">*_*</h1>
+    </div>
+    <div>
+        <h1 class="b">*_*</h1>
+    </div>
+    <div>
+        <h1 class="b">*_*</h1>
+    </div>
+    <div>
+        <h1 class="b">*_*</h1>
+    </div>
+    <div>
+        <h1 class="b">*_*</h1>
+    </div>
+    <div>
+        <h1 class="b">*_*</h1>
+    </div>
+    <div>
+        <h1 class="b">*_*</h1>
+    </div>
+    <div class="hover-container">
+        <h1 class="b">T_x</h1>
+        <div class="popup">
+            <b>T_x</b> Timer (seconds):<br>
+            <input type="text" id="timer" placeholder="0" readonly><br>
+            <button onclick="timer.value += '1'">1</button>
+            <button onclick="timer.value += '2'">2</button>
+            <button onclick="timer.value += '3'">3</button>
+            <button onclick="timer.value += '4'">4</button>
+            <button onclick="timer.value += '5'">5</button><br>
+            <button onclick="timer.value += '6'">6</button>
+            <button onclick="timer.value += '7'">7</button>
+            <button onclick="timer.value += '8'">8</button>
+            <button onclick="timer.value += '9'">9</button>
+            <button onclick="timer.value += '0'">0</button><br>
+            <button onclick="timer.value = timer.value.slice(0, -1)">DEL</button>
+            <button onclick="timer.value = ''">C</button>
+            <button onclick="setTimeout(function() { alert('Waktu habis!'); timer.value = ''; }, timer.value * 1000)">Set</button>
+
+        </div>
+    </div>
+    <div class="hover-container">
+        <h1 class="b">:v*</h1>
+        <div class="popup">
+            ???
+        </div>
+    </div>
+    <div>
+        <h1 class="b">*_*</h1>
+    </div>
+    <div>
+        <h1 class="b">*_*</h1>
+    </div>
+    <div>
+        <h1 class="b">*_*</h1>
+    </div>
+    <div class="hover-container">
+        <h1 class="b">*>*</h1>
+        <div class="popup">
+            ???
+        </div>
+    </div>
+    <div>
+        <h1 class="b">*_*</h1>
+    </div>
+    <div>
+        <h1 class="b">*_*</h1>
+    </div>
+    <div class="hover-container">
+        <h1 class="b">-_-</h1>
+        <div class="popup">
+            ???
+        </div>
+    </div>
+    <div class="hover-container">
+        <h1 class="b">x_x</h1>
+        <div class="popup">
+            ???
+        </div>
+    </div>
+    <div class="hover-container">
+        <h1 class="b">T_T</h1>
+        <div class="popup">
+            ???
+        </div>
+    </div>
+    <div class="hover-container">
+        <h1 class="b">*||*</h1>
+        <div class="popup">
+            <b>*||*</b> Prayer Schedule:<br>
+            <iframe src="https://www.islamicfinder.org/prayer-widget/" width="100%" height="50%"></iframe>
+        </div>
+    </div>
+    <div class="hover-container">
+        <h1 class="b">*0*</h1>
+        <div class="popup">
+            ???
+        </div>
+    </div>
+    <div class="hover-container">
+        <h1 class="b">* *</h1>
+        <div class="popup">
+            ???
+        </div>
+    </div>
+    <div>
+        <h1 class="b">*_*</h1>
+    </div>
+    <div class="hover-container">
+        <h1 class="b">*_o</h1>
+        <div class="popup">
+            ???
+        </div>
     </div>
     <br> 
     <div>
