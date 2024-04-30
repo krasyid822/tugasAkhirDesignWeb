@@ -8,7 +8,39 @@
     <title>Mini Note Research Index</title>
     <h1>Mini Note Research Index</h1>
     <style>
+        body {
         color-scheme: dark;
+        text-align: center;
+        font-weight: bold;
+        }
+        /* Container that triggers the hover effect */
+        .hover-container {
+            position: relative;
+            color: blue;
+            text-decoration: underline;
+        }
+
+        /* Popup window styling */
+        .popup {
+            display: none; /* Initially hidden */
+            position: absolute;
+            top: 100%; /* Position the popup below the container */
+            left: 50%; /* Center the popup horizontally */
+            transform: translateX(-50%);
+            padding: 10px;
+            background-color: wheat;
+            color: blue;
+            border: 1px solid black;
+            border-radius: 5px;
+            white-space: nowrap; /* Ensure content stays in one line */
+        }
+
+        /* Show the popup when the container is hovered */
+        .hover-container:hover .popup {
+            display: block;
+            /* Fix popup class content overwritten */
+            z-index: 2;
+        }
     </style>
 </head>
 <body>
@@ -16,13 +48,29 @@
     <a href="projectUtama.htm">Projek Akhir Design Web: Mini Note Research</a>
     <br><br>
     Materi:<br>
+    <a href="https://drive.google.com/file/d/14T3E2d5qR6cMHoGYz3NFK2E1nQYi8CC9/view">Website</a><br>
+    <a href="https://drive.google.com/file/d/1IjIHQap5-HA2o4-7EznYTGNY8CKvxseB/view">BAB I - HTML</a><br>
+    <a href="https://drive.google.com/file/d/1ufGOjjufq8pSGWe6gFmCINfubIlOjQFd/view">BAB II</a><br>
+    <a href="https://drive.google.com/file/d/18wdlE0QoiSJ4EDw-N7JhdjI8ala3BVQ3/view">BAB III</a><br>
+    <a href="https://drive.google.com/file/d/1iTVafczaFgPSTOjxEGNYnpwJdbo8z03k/view">BAB V</a><br>
+    <div class="hover-container">
+        BAB VI - CSS
+        <div class="popup">
+        <a href="https://drive.google.com/file/d/1JqExkvohF2_kMMk0rQxyDec-4BSfI_W3/view">BAB VI - CSS</a><br>
+        <a href="https://drive.google.com/file/d/1XMxFs_UNg9jz0-jnZY0VBB6iI58FvhEM/view">BAB VI - CSS Lanjutan</a><br>
+        </div>
+    </div>
+    <a href="https://drive.google.com/file/d/1Wkb5imenW27PlLLdd0KmWXJCch-PY8yM/view">BAB X - JavaScript</a><br>
+    <br>
+    Uji Coba Materi:<br>
     <a href="bab1.html">BAB I</a><br>
     <a href="">BAB II</a><br>
     <a href="">BAB III</a><br>
     <a href="">BAB IV</a><br>
     <a href="">BAB V</a><br>
     <a href="">BAB VI</a><br>
-    <br><br>
+    <a href="">BAB X</a><br>
+    <br>
     Others:<br>
     <a href="page404.html">Page 404</a><br>
     <a href="copyright.htm">Copyright</a><br>
