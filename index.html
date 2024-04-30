@@ -13,7 +13,7 @@
         div {
             display: inline-block;
         }
-        .a, .b, .c {
+        .a, .b, .c, .reduce-padding {
             background-color: rgb(233, 233, 3);
             padding: 50px;
             margin: 10px;
@@ -28,7 +28,7 @@
             border: 10px solid red;
             font-family: "Jersey 25";
         }
-        .b:hover {
+        .b:hover, .reduce-padding:hover {
             border: 10px solid red; 
             font-family: "Jersey 25";  
         }
@@ -36,7 +36,16 @@
             border: 10px solid red;
             font-family: "Jersey 25";
         }
-        
+        @media (max-width: 768px) {
+            .mobile, .b, .a {
+                margin: 4px;
+            }
+            .reduce-padding {
+                background-color: rgb(233, 233, 3);
+                margin: 4px;
+                padding: 40px;
+            }
+        }
     </style>
     
 </head>
@@ -69,9 +78,6 @@
 /* Container that triggers the hover effect */
 .hover-container {
     position: relative;
-    display: inline-block;
-    padding: 0px;
-    cursor: pointer;
 }
 
 /* Popup window styling */
@@ -88,10 +94,17 @@
     border-radius: 5px;
     white-space: nowrap; /* Ensure content stays in one line */
 }
+@media (max-width: 768px) {
+    .popup {
+        left: 60%;
+    }
+}
 
 /* Show the popup when the container is hovered */
 .hover-container:hover .popup {
     display: block;
+    /* Fix popup class content overwritten */
+    z-index: 2;
 }
 
         </style>
@@ -108,7 +121,7 @@
         </div>
     </div>
     <div class="hover-container">
-        <h1 class="c">=-=</h1>
+        <h1 class="b">=-=</h1>
         <div class="popup">
             <b>=-=</b> Calculator:<br>
             <input type="text" id="calc" placeholder="0" readonly><br>
@@ -299,7 +312,7 @@
             <button onclick="timer.value += '0'">0</button><br>
             <button onclick="timer.value = timer.value.slice(0, -1)">DEL</button>
             <button onclick="timer.value = ''">C</button>
-            <button onclick="setTimeout(function() { alert('Waktu habis!'); timer.value = ''; }, timer.value * 1000)">Set</button>
+            <button onclick="setTimeout(function() { navigator.vibrate(1000); timer.value = 'Waktu habis!'; }, timer.value * 1000)">Set</button>
 
         </div>
     </div>
@@ -343,13 +356,13 @@
         </div>
     </div>
     <div class="hover-container">
-        <h1 class="b">T_T</h1>
+        <h1 class="reduce-padding">T_T</h1>
         <div class="popup">
             ???
         </div>
     </div>
     <div class="hover-container">
-        <h1 class="b">*||*</h1>
+        <h1 class="reduce-padding">*||*</h1>
         <div class="popup">
             <b>*||*</b> Prayer Schedule:<br>
             <iframe src="https://www.islamicfinder.org/prayer-widget/" width="100%" height="50%"></iframe>
