@@ -10,14 +10,17 @@
         body {
             background-color: yellow;
             color: black;
+            
         }
         div {
             display: inline-block;
+            
         }
         .a, .b, .c, .reduce-padding {
             background-color: rgb(233, 233, 3);
             padding: 50px;
             margin: 10px;
+            /* filter: invert(1); */
         }
         .a {
             border: 1px solid red;
@@ -110,9 +113,9 @@
 
         </style>
     <h1 id="home-nama" class="jersey-25-regular">Loading...</h1>
-    <h6><center>Sebuah website yang berisi catatan pendek penulis tentang hasil pengamatannya, "Mini Note Research (MNotR)". Didesain untuk seinteraktif mungkin dengan pengguna, dengan penambahaan tools yang tersembunyi dibeberapa mysterybox di bawah</h6>
+    <h6 style="text-align: justify;">Sebuah website yang berisi catatan pendek penulis tentang hasil pengamatannya, "Mini Note Research (MNotR)". Didesain untuk seinteraktif mungkin dengan pengguna, dengan penambahaan tools yang tersembunyi dibeberapa mysterybox di bawah ini:</h6>
     <div>
-        <a href="projectUtama.htm"><h1 class="a">Start</h1></a>
+        <a style="text-decoration: none;" href="projectUtama.htm"><h1 class="a">Start</h1></a>
     </div>
     <div class="hover-container">
         <h1 class="b">*_*</h1>
@@ -152,7 +155,7 @@
         <div class="popup">
             <b>*_*</b> Random Number:<br>
             <input type="text" id="random" placeholder="0" readonly><br>
-            <button onclick="random.value = Math.floor(Math.random() * 100)">Random</button>
+            <button onclick="random.value = Math.floor(Math.random() * 9999999999)">Random</button>
         </div>
     </div>
     <div class="hover-container">
@@ -273,8 +276,73 @@
     <div>
         <h1 class="b">*_*</h1>
     </div>
-    <div>
+    <div class="hover-container">
         <h1 class="b">*_*</h1>
+        <div class="popup">
+            <b>*_*</b> Sound Generator:<br><br>
+            <style>
+                .body-x {
+                    font-family: Arial, sans-serif;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    height: 100vh;
+                }
+                .controls {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 10px;
+                }
+            </style>
+            <div class="controls">
+                <label for="frequency">Frequency: <span id="freqValue">440</span> Hz</label>
+                <input type="range" id="frequency" min="20" max="2000" value="440" step="1">
+                <button id="startButton">Start</button>
+                <button id="stopButton" disabled>Stop</button>
+            </div>
+
+            <script>
+                let audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                let oscillator;
+                let isPlaying = false;
+
+                const frequencySlider = document.getElementById('frequency');
+                const freqValue = document.getElementById('freqValue');
+                const startButton = document.getElementById('startButton');
+                const stopButton = document.getElementById('stopButton');
+
+                frequencySlider.addEventListener('input', function() {
+                    freqValue.textContent = this.value;
+                    if (oscillator) {
+                        oscillator.frequency.setValueAtTime(this.value, audioContext.currentTime);
+                    }
+                });
+
+                startButton.addEventListener('click', function() {
+                    if (!isPlaying) {
+                        oscillator = audioContext.createOscillator();
+                        oscillator.type = 'sine'; // You can change to 'square', 'sawtooth', 'triangle'
+                        oscillator.frequency.setValueAtTime(frequencySlider.value, audioContext.currentTime);
+                        oscillator.connect(audioContext.destination);
+                        oscillator.start();
+                        isPlaying = true;
+                        startButton.disabled = true;
+                        stopButton.disabled = false;
+                    }
+                });
+
+                stopButton.addEventListener('click', function() {
+                    if (isPlaying) {
+                        oscillator.stop();
+                        isPlaying = false;
+                        startButton.disabled = false;
+                        stopButton.disabled = true;
+                    }
+                });
+            </script>
+        </div>
     </div>
     <div>
         <h1 class="b">*_*</h1>
@@ -314,7 +382,12 @@
             <button onclick="timer.value += '0'">0</button><br>
             <button onclick="timer.value = timer.value.slice(0, -1)">DEL</button>
             <button onclick="timer.value = ''">C</button>
-            <button onclick="setTimeout(function() { navigator.vibrate(1000); timer.value = 'Waktu habis!'; }, timer.value * 1000)">Set</button>
+            <button onclick="setTimeout(function() { 
+                navigator.vibrate(3000); 
+                timer.value = 'Waktu habis!'; 
+                document.getElementById('setButton').disabled = false; 
+            }, timer.value * 1000); 
+            this.disabled = true;" id="setButton">Set</button>
 
         </div>
     </div>
