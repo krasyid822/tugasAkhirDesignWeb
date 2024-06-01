@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- ada saran untuk menyediakan tombol save di mini notepad  -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <base href="page404.html">
@@ -46,15 +47,17 @@
         }
         .a {
             border: 1px solid red;
+            padding-right: 100px;
+            padding-left: 100px;
             font-family: "Jersey 25";
             text-decoration: none;
         }
         .a:hover {
-            border: 10px solid red;
+            border: 10px solid blue;
             font-family: "Jersey 25";
         }
         .b:hover, .reduce-padding:hover {
-            border: 10px solid red; 
+            border: 10px solid blue; 
             font-family: "Jersey 25";  
         }
         .c:hover {
@@ -72,7 +75,6 @@
             }
         }
     </style>
-    
 </head>
 <body>
     <script>
@@ -104,414 +106,414 @@
         }
         /* style.css */
 
-/* Container that triggers the hover effect */
-.hover-container {
-    position: relative;
-    /* filter: invert(1); */
-}
+        /* Container that triggers the hover effect */
+        .hover-container {
+            position: relative;
+            /* filter: invert(1); */
+        }
 
-/* Popup window styling */
-.popup {
-    display: none; /* Initially hidden */
-    position: absolute;
-    top: 100%; /* Position the popup below the container */
-    left: 50%; /* Center the popup horizontally */
-    transform: translateX(-50%);
-    padding: 10px;
-    background-color: black;
-    color: yellowgreen;
-    border: 1px solid red;
-    border-radius: 5px;
-    white-space: nowrap; /* Ensure content stays in one line */
-}
-/* @media (max-width: 768px) {
-    .popup {
-        left: 60%;
-    }
-} */
+        /* Popup window styling */
+        .popup {
+            display: none; /* Initially hidden */
+            position: absolute;
+            top: 100%; /* Position the popup below the container */
+            left: 50%; /* Center the popup horizontally */
+            transform: translateX(-50%);
+            padding: 10px;
+            background-color: black;
+            color: yellowgreen;
+            border: 1px solid red;
+            border-radius: 5px;
+            white-space: nowrap; /* Ensure content stays in one line */
+        }
+        /* @media (max-width: 768px) {
+            .popup {
+                left: 60%;
+            }
+        } */
 
-/* Show the popup when the container is hovered */
-.hover-container:hover .popup {
-    display: block;
-    /* Fix popup class content overwritten */
-    z-index: 2;
-}
-
+        /* Show the popup when the container is hovered */
+        .hover-container:hover .popup {
+            display: block;
+            /* Fix popup class content overwritten */
+            z-index: 2;
+        }
         </style>
-        <div class="fixed">
-            <h1 id="home-nama" class="jersey-25-regular" style="margin: 0%; padding: 0%;">Loading...</h1>
-        </div>
-        <div style="text-align: center; margin-top: 10px;">
-            <h6 style="text-align: justify;">Sebuah website yang berisi catatan pendek penulis tentang hasil pengamatannya, "Mini Note Research (MNotR)". Didesain untuk seinteraktif mungkin dengan pengguna, dengan penambahaan tools yang tersembunyi dibeberapa mysterybox di bawah ini:</h6>
-    <div>
-        <a style="text-decoration: none;" href="projectUtama.htm"><h1 class="a">Start</h1></a>
+    <div class="fixed">
+        <h1 id="home-nama" class="jersey-25-regular" style="margin: 0%; padding: 0%;">Loading...</h1>
     </div>
-    <div class="hover-container">
-        <h1 class="b">*_*</h1>
-        <div class="popup">
-            <b>*_*</b> Mini Notepad:<br>
-            <textarea name="text" id="text" cols="16" rows="2" placeholder="Ketikkan apa saja..."></textarea>
+    <div style="text-align: center; margin-top: 10px;">
+        <h6 style="text-align: justify;">Sebuah website yang berisi catatan pendek penulis tentang hasil pengamatannya, "Mini Note Research (MNotR)". Didesain untuk seinteraktif mungkin dengan pengguna, dengan penambahaan tools yang tersembunyi dibeberapa mysterybox di bawah ini:</h6>
+        <div>
+            <a style="text-decoration: none;" href="projectUtama.htm"><h1 class="a">Start</h1></a>
         </div>
-    </div>
-    <div class="hover-container">
-        <h1 class="b">*_*</h1>
-        <div class="popup">
-            <b>*_*</b> Calculator:<br>
-            <input type="text" id="calc" placeholder="0" readonly><br>
-            <button onclick="calc.value += '1'">1</button>
-            <button onclick="calc.value += '2'">2</button>
-            <button onclick="calc.value += '3'">3</button>
-            <button onclick="calc.value += '4'">4</button>
-            <button onclick="calc.value += '5'">5</button><br>
-            <button onclick="calc.value += '6'">6</button>
-            <button onclick="calc.value += '7'">7</button>
-            <button onclick="calc.value += '8'">8</button>
-            <button onclick="calc.value += '9'">9</button>
-            <button onclick="calc.value += '0'">0</button><br>
-            <button onclick="calc.value += '+'">+</button>
-            <button onclick="calc.value += '-'">-</button>
-            <button onclick="calc.value += '*'">*</button>
-            <button onclick="calc.value += '/'">/</button>
-            <button onclick="calc.value += '.'">.</button><br>
-            <button onclick="calc.value = calc.value.slice(0, -1)">DEL</button>
-            <button onclick="calc.value = ''">C</button>
-            <button onclick="calc.value = eval(calc.value)">=</button>
+        <div class="hover-container">
+            <h1 class="b">*_*</h1>
+            <div class="popup">
+                <b>*_*</b> Mini Notepad:<br>
+                <textarea name="text" id="text" cols="16" rows="2" placeholder="Ketikkan apa saja..."></textarea><br>
+                <button>Save</button>
+            </div>
+        </div>
+        <div class="hover-container">
+            <h1 class="b">*_*</h1>
+            <div class="popup">
+                <b>*_*</b> Calculator:<br>
+                <input type="text" id="calc" placeholder="0" readonly><br>
+                <button onclick="calc.value += '1'">1</button>
+                <button onclick="calc.value += '2'">2</button>
+                <button onclick="calc.value += '3'">3</button>
+                <button onclick="calc.value += '4'">4</button>
+                <button onclick="calc.value += '5'">5</button><br>
+                <button onclick="calc.value += '6'">6</button>
+                <button onclick="calc.value += '7'">7</button>
+                <button onclick="calc.value += '8'">8</button>
+                <button onclick="calc.value += '9'">9</button>
+                <button onclick="calc.value += '0'">0</button><br>
+                <button onclick="calc.value += '+'">+</button>
+                <button onclick="calc.value += '-'">-</button>
+                <button onclick="calc.value += '*'">*</button>
+                <button onclick="calc.value += '/'">/</button>
+                <button onclick="calc.value += '.'">.</button><br>
+                <button onclick="calc.value = calc.value.slice(0, -1)">DEL</button>
+                <button onclick="calc.value = ''">C</button>
+                <button onclick="calc.value = eval(calc.value)">=</button>
 
+            </div>
         </div>
-    </div>
-    <div class="hover-container">
-        <h1 class="b">*_*</h1>
-        <div class="popup">
-            <b>*_*</b> Random Number:<br>
-            <input type="text" id="random" placeholder="0" readonly><br>
-            <button onclick="random.value = Math.floor(Math.random() * 9999999999)">Random</button>
+        <div class="hover-container">
+            <h1 class="b">*_*</h1>
+            <div class="popup">
+                <b>*_*</b> Random Number:<br>
+                <input type="text" id="random" placeholder="0" readonly><br>
+                <button onclick="random.value = Math.floor(Math.random() * 9999999999)">Random</button>
+            </div>
         </div>
-    </div>
-    <div class="hover-container">
-        <h1 class="b">*_*</h1>
-        <div class="popup">
-            <b>*_*</b> Clock:<br>
-            <p id="clock"></p>
-            <script>
-                var clock = document.getElementById("clock");
-                function showTime() {
-                    var date = new Date();
-                    var h = date.getHours();
-                    var m = date.getMinutes();
-                    var s = date.getSeconds();
-                    var session = "AM";
-                    if (h == 0) {
-                        h = 12;
+        <div class="hover-container">
+            <h1 class="b">*_*</h1>
+            <div class="popup">
+                <b>*_*</b> Clock:<br>
+                <p id="clock"></p>
+                <script>
+                    var clock = document.getElementById("clock");
+                    function showTime() {
+                        var date = new Date();
+                        var h = date.getHours();
+                        var m = date.getMinutes();
+                        var s = date.getSeconds();
+                        var session = "AM";
+                        if (h == 0) {
+                            h = 12;
+                        }
+                        if (h > 12) {
+                            h = h - 12;
+                            session = "PM";
+                        }
+                        h = (h < 10) ? "0" + h : h;
+                        m = (m < 10) ? "0" + m : m;
+                        s = (s < 10) ? "0" + s : s;
+                        var time = h + ":" + m + ":" + s + " " + session;
+                        clock.innerText = time;
+                        clock.textContent = time;
+                        setTimeout(showTime, 1000);
                     }
-                    if (h > 12) {
-                        h = h - 12;
-                        session = "PM";
+                    showTime();
+                </script>
+
+            </div>
+        </div>
+        <div class="hover-container">
+            <h1 class="b">*_*</h1>
+            <div class="popup">
+                <b>*_*</b> ???<br>
+                <!-- <iframe src="https://krasyid822.github.io/TugasAkhirCodifyPortofolioWeb/" width="500" height="600" frameborder="0" allowfullscreen></iframe> -->
+            </div>
+        </div>
+        <div class="hover-container">
+            <h1 class="b">*_*</h1>
+            <div class="popup">
+                <b>*_*</b> Date:<br>
+                <p id="date"></p>
+                <script>
+                    var date = document.getElementById("date");
+                    function showDate() {
+                        var dateNow = new Date();
+                        var day = dateNow.getDate();
+                        var month = dateNow.getMonth() + 1;
+                        var year = dateNow.getFullYear();
+                        var fullDate = day + "/" + month + "/" + year;
+                        date.innerText = fullDate;
+                        date.textContent = fullDate;
                     }
-                    h = (h < 10) ? "0" + h : h;
-                    m = (m < 10) ? "0" + m : m;
-                    s = (s < 10) ? "0" + s : s;
-                    var time = h + ":" + m + ":" + s + " " + session;
-                    clock.innerText = time;
-                    clock.textContent = time;
-                    setTimeout(showTime, 1000);
-                }
-                showTime();
-            </script>
+                    showDate();
+                </script>
 
+            </div>
         </div>
-    </div>
-    <div class="hover-container">
-        <h1 class="b">*_*</h1>
-        <div class="popup">
-            <b>*_*</b> ???<br>
-            <!-- <iframe src="https://krasyid822.github.io/TugasAkhirCodifyPortofolioWeb/" width="500" height="600" frameborder="0" allowfullscreen></iframe> -->
+        <div>
+            <h1 class="b">*_*</h1>
         </div>
-    </div>
-    <div class="hover-container">
-        <h1 class="b">*_*</h1>
-        <div class="popup">
-            <b>*_*</b> Date:<br>
-            <p id="date"></p>
-            <script>
-                var date = document.getElementById("date");
-                function showDate() {
-                    var dateNow = new Date();
-                    var day = dateNow.getDate();
-                    var month = dateNow.getMonth() + 1;
-                    var year = dateNow.getFullYear();
-                    var fullDate = day + "/" + month + "/" + year;
-                    date.innerText = fullDate;
-                    date.textContent = fullDate;
-                }
-                showDate();
-            </script>
+        <div>
+            <h1 class="b">*_*</h1>
+        </div>
+        <div>
+            <h1 class="b">*_*</h1>
+        </div>
+        <div>
+            <h1 class="b">*_*</h1>
+        </div>
+        <div>
+            <h1 class="b">*_*</h1>
+        </div>
+        <div>
+            <h1 class="b">*_*</h1>
+        </div>
+        <div>
+            <h1 class="b">*_*</h1>
+        </div>
+        <div>
+            <h1 class="b">*_*</h1>
+        </div>
+        <div>
+            <h1 class="b">*_*</h1>
+        </div>
+        <div>
+            <h1 class="b">*_*</h1>
+        </div>
+        <div>
+            <h1 class="b">*_*</h1>
+        </div>
+        <div>
+            <h1 class="b">*_*</h1>
+        </div>
+        <div>
+            <h1 class="b">*_*</h1>
+        </div>
+        <div>
+            <h1 class="b">*_*</h1>
+        </div>
+        <div>
+            <h1 class="b">*_*</h1>
+        </div>
+        <div>
+            <h1 class="b">*_*</h1>
+        </div>
+        <div>
+            <h1 class="b">*_*</h1>
+        </div>
+        <div>
+            <h1 class="b">*_*</h1>
+        </div>
+        <div>
+            <h1 class="b">*_*</h1>
+        </div>
+        <div class="hover-container">
+            <h1 class="b">*_*</h1>
+            <div class="popup">
+                <b>*_*</b> Sound Generator:<br><br>
+                <style>
+                    .body-x {
+                        font-family: Arial, sans-serif;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                        height: 100vh;
+                    }
+                    .controls {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        gap: 10px;
+                    }
+                </style>
+                <div class="controls">
+                    <label for="frequency">Frequency: <span id="freqValue">440</span> Hz</label>
+                    <input type="range" id="frequency" min="20" max="2000" value="440" step="1">
+                    <button id="startButton">Start</button>
+                    <button id="stopButton" disabled>Stop</button>
+                </div>
 
+                <script>
+                    let audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                    let oscillator;
+                    let isPlaying = false;
+
+                    const frequencySlider = document.getElementById('frequency');
+                    const freqValue = document.getElementById('freqValue');
+                    const startButton = document.getElementById('startButton');
+                    const stopButton = document.getElementById('stopButton');
+
+                    frequencySlider.addEventListener('input', function() {
+                        freqValue.textContent = this.value;
+                        if (oscillator) {
+                            oscillator.frequency.setValueAtTime(this.value, audioContext.currentTime);
+                        }
+                    });
+
+                    startButton.addEventListener('click', function() {
+                        if (!isPlaying) {
+                            oscillator = audioContext.createOscillator();
+                            oscillator.type = 'sine'; // You can change to 'square', 'sawtooth', 'triangle'
+                            oscillator.frequency.setValueAtTime(frequencySlider.value, audioContext.currentTime);
+                            oscillator.connect(audioContext.destination);
+                            oscillator.start();
+                            isPlaying = true;
+                            startButton.disabled = true;
+                            stopButton.disabled = false;
+                        }
+                    });
+
+                    stopButton.addEventListener('click', function() {
+                        if (isPlaying) {
+                            oscillator.stop();
+                            isPlaying = false;
+                            startButton.disabled = false;
+                            stopButton.disabled = true;
+                        }
+                    });
+                </script>
+            </div>
         </div>
-    </div>
-    <div>
-        <h1 class="b">*_*</h1>
-    </div>
-    <div>
-        <h1 class="b">*_*</h1>
-    </div>
-    <div>
-        <h1 class="b">*_*</h1>
-    </div>
-    <div>
-        <h1 class="b">*_*</h1>
-    </div>
-    <div>
-        <h1 class="b">*_*</h1>
-    </div>
-    <div>
-        <h1 class="b">*_*</h1>
-    </div>
-    <div>
-        <h1 class="b">*_*</h1>
-    </div>
-    <div>
-        <h1 class="b">*_*</h1>
-    </div>
-    <div>
-        <h1 class="b">*_*</h1>
-    </div>
-    <div>
-        <h1 class="b">*_*</h1>
-    </div>
-    <div>
-        <h1 class="b">*_*</h1>
-    </div>
-    <div>
-        <h1 class="b">*_*</h1>
-    </div>
-    <div>
-        <h1 class="b">*_*</h1>
-    </div>
-    <div>
-        <h1 class="b">*_*</h1>
-    </div>
-    <div>
-        <h1 class="b">*_*</h1>
-    </div>
-    <div>
-        <h1 class="b">*_*</h1>
-    </div>
-    <div>
-        <h1 class="b">*_*</h1>
-    </div>
-    <div>
-        <h1 class="b">*_*</h1>
-    </div>
-    <div>
-        <h1 class="b">*_*</h1>
-    </div>
-    <div class="hover-container">
-        <h1 class="b">*_*</h1>
-        <div class="popup">
-            <b>*_*</b> Sound Generator:<br><br>
+        <div>
+            <h1 class="b">*_*</h1>
+        </div>
+        <div>
+            <h1 class="b">*_*</h1>
+        </div>
+        <div>
+            <h1 class="b">*_*</h1>
+        </div>
+        <div>
+            <h1 class="b">*_*</h1>
+        </div>
+        <div>
+            <h1 class="b">*_*</h1>
+        </div>
+        <div>
+            <h1 class="b">*_*</h1>
+        </div>
+        <div>
+            <h1 class="b">*_*</h1>
+        </div>
+        <div class="hover-container">
+            <h1 class="b">*_*</h1>
+            <div class="popup">
+                <b>*_*</b> Timer (seconds):<br>
+                <input type="text" id="timer" placeholder="0" readonly><br>
+                <button onclick="timer.value += '1'">1</button>
+                <button onclick="timer.value += '2'">2</button>
+                <button onclick="timer.value += '3'">3</button>
+                <button onclick="timer.value += '4'">4</button>
+                <button onclick="timer.value += '5'">5</button><br>
+                <button onclick="timer.value += '6'">6</button>
+                <button onclick="timer.value += '7'">7</button>
+                <button onclick="timer.value += '8'">8</button>
+                <button onclick="timer.value += '9'">9</button>
+                <button onclick="timer.value += '0'">0</button><br>
+                <button onclick="timer.value = timer.value.slice(0, -1)">DEL</button>
+                <button onclick="timer.value = ''">C</button>
+                <button onclick="setTimeout(function() { 
+                    navigator.vibrate(3000); 
+                    timer.value = 'Waktu habis!'; 
+                    document.getElementById('setButton').disabled = false; 
+                }, timer.value * 1000); 
+                this.disabled = true;" id="setButton">Set</button>
+
+            </div>
+        </div>
+        <div class="hover-container">
+            <h1 class="b">*_*</h1>
+            <div class="popup">
+                ???
+            </div>
+        </div>
+        <div>
+            <h1 class="b">*_*</h1>
+        </div>
+        <div>
+            <h1 class="b">*_*</h1>
+        </div>
+        <div>
+            <h1 class="b">*_*</h1>
+        </div>
+        <div class="hover-container">
+            <h1 class="b">*_*</h1>
+            <div class="popup">
+                ???
+            </div>
+        </div>
+        <div>
+            <h1 class="b">*_*</h1>
+        </div>
+        <div>
+            <h1 class="b">*_*</h1>
+        </div>
+        <div class="hover-container">
+            <h1 class="b">*_*</h1>
+            <div class="popup">
+                ???
+            </div>
+        </div>
+        <div class="hover-container">
+            <h1 class="b">*_*</h1>
+            <div class="popup">
+                ???
+            </div>
+        </div>
+        <div class="hover-container">
+            <h1 class="b">*_*</h1>
+            <div class="popup">
+                ???
+            </div>
+        </div>
+        <div class="hover-container">
+            <h1 class="b">*_*</h1>
+            <div class="popup">
+                <b>*_*</b> Prayer Schedule:<br>
+                <iframe src="https://www.islamicfinder.org/prayer-widget/" width="100%" height="50%"></iframe>
+            </div>
+        </div>
+        <div class="hover-container">
+            <h1 class="b">*_*</h1>
+            <div class="popup">
+                ???
+            </div>
+        </div>
+        <div class="hover-container">
+            <h1 class="b">*_*</h1>
+            <div class="popup">
+                ???
+            </div>
+        </div>
+        <div>
+            <h1 class="b">*_*</h1>
+        </div>
+        <div class="hover-container">
+            <h1 class="b">*_*</h1>
+            <div class="popup">
+                ???
+            </div>
+        </div>
+        <br> 
+        <div>
             <style>
-                .body-x {
-                    font-family: Arial, sans-serif;
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    justify-content: center;
-                    height: 100vh;
+                .ab:link{
+                color: yellow;
+                text-decoration: none;
                 }
-                .controls {
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    gap: 10px;
+                .ab:hover{
+                    color: orange;
+                }
+                .ab:active{
+                    font-style: italic;
+                }
+                .ab:visited{
+                    color: red;
                 }
             </style>
-            <div class="controls">
-                <label for="frequency">Frequency: <span id="freqValue">440</span> Hz</label>
-                <input type="range" id="frequency" min="20" max="2000" value="440" step="1">
-                <button id="startButton">Start</button>
-                <button id="stopButton" disabled>Stop</button>
-            </div>
-
-            <script>
-                let audioContext = new (window.AudioContext || window.webkitAudioContext)();
-                let oscillator;
-                let isPlaying = false;
-
-                const frequencySlider = document.getElementById('frequency');
-                const freqValue = document.getElementById('freqValue');
-                const startButton = document.getElementById('startButton');
-                const stopButton = document.getElementById('stopButton');
-
-                frequencySlider.addEventListener('input', function() {
-                    freqValue.textContent = this.value;
-                    if (oscillator) {
-                        oscillator.frequency.setValueAtTime(this.value, audioContext.currentTime);
-                    }
-                });
-
-                startButton.addEventListener('click', function() {
-                    if (!isPlaying) {
-                        oscillator = audioContext.createOscillator();
-                        oscillator.type = 'sine'; // You can change to 'square', 'sawtooth', 'triangle'
-                        oscillator.frequency.setValueAtTime(frequencySlider.value, audioContext.currentTime);
-                        oscillator.connect(audioContext.destination);
-                        oscillator.start();
-                        isPlaying = true;
-                        startButton.disabled = true;
-                        stopButton.disabled = false;
-                    }
-                });
-
-                stopButton.addEventListener('click', function() {
-                    if (isPlaying) {
-                        oscillator.stop();
-                        isPlaying = false;
-                        startButton.disabled = false;
-                        stopButton.disabled = true;
-                    }
-                });
-            </script>
+            <a class="ab" href="index1.html">Hidden features</a>
         </div>
     </div>
-    <div>
-        <h1 class="b">*_*</h1>
-    </div>
-    <div>
-        <h1 class="b">*_*</h1>
-    </div>
-    <div>
-        <h1 class="b">*_*</h1>
-    </div>
-    <div>
-        <h1 class="b">*_*</h1>
-    </div>
-    <div>
-        <h1 class="b">*_*</h1>
-    </div>
-    <div>
-        <h1 class="b">*_*</h1>
-    </div>
-    <div>
-        <h1 class="b">*_*</h1>
-    </div>
-    <div class="hover-container">
-        <h1 class="b">*_*</h1>
-        <div class="popup">
-            <b>*_*</b> Timer (seconds):<br>
-            <input type="text" id="timer" placeholder="0" readonly><br>
-            <button onclick="timer.value += '1'">1</button>
-            <button onclick="timer.value += '2'">2</button>
-            <button onclick="timer.value += '3'">3</button>
-            <button onclick="timer.value += '4'">4</button>
-            <button onclick="timer.value += '5'">5</button><br>
-            <button onclick="timer.value += '6'">6</button>
-            <button onclick="timer.value += '7'">7</button>
-            <button onclick="timer.value += '8'">8</button>
-            <button onclick="timer.value += '9'">9</button>
-            <button onclick="timer.value += '0'">0</button><br>
-            <button onclick="timer.value = timer.value.slice(0, -1)">DEL</button>
-            <button onclick="timer.value = ''">C</button>
-            <button onclick="setTimeout(function() { 
-                navigator.vibrate(3000); 
-                timer.value = 'Waktu habis!'; 
-                document.getElementById('setButton').disabled = false; 
-            }, timer.value * 1000); 
-            this.disabled = true;" id="setButton">Set</button>
-
-        </div>
-    </div>
-    <div class="hover-container">
-        <h1 class="b">*_*</h1>
-        <div class="popup">
-            ???
-        </div>
-    </div>
-    <div>
-        <h1 class="b">*_*</h1>
-    </div>
-    <div>
-        <h1 class="b">*_*</h1>
-    </div>
-    <div>
-        <h1 class="b">*_*</h1>
-    </div>
-    <div class="hover-container">
-        <h1 class="b">*_*</h1>
-        <div class="popup">
-            ???
-        </div>
-    </div>
-    <div>
-        <h1 class="b">*_*</h1>
-    </div>
-    <div>
-        <h1 class="b">*_*</h1>
-    </div>
-    <div class="hover-container">
-        <h1 class="b">*_*</h1>
-        <div class="popup">
-            ???
-        </div>
-    </div>
-    <div class="hover-container">
-        <h1 class="b">*_*</h1>
-        <div class="popup">
-            ???
-        </div>
-    </div>
-    <div class="hover-container">
-        <h1 class="b">*_*</h1>
-        <div class="popup">
-            ???
-        </div>
-    </div>
-    <div class="hover-container">
-        <h1 class="b">*_*</h1>
-        <div class="popup">
-            <b>*_*</b> Prayer Schedule:<br>
-            <iframe src="https://www.islamicfinder.org/prayer-widget/" width="100%" height="50%"></iframe>
-        </div>
-    </div>
-    <div class="hover-container">
-        <h1 class="b">*_*</h1>
-        <div class="popup">
-            ???
-        </div>
-    </div>
-    <div class="hover-container">
-        <h1 class="b">*_*</h1>
-        <div class="popup">
-            ???
-        </div>
-    </div>
-    <div>
-        <h1 class="b">*_*</h1>
-    </div>
-    <div class="hover-container">
-        <h1 class="b">*_*</h1>
-        <div class="popup">
-            ???
-        </div>
-    </div>
-    <br> 
-    <div>
-        <style>
-            .ab:link{
-            color: yellow;
-            text-decoration: none;
-            }
-            .ab:hover{
-                color: orange;
-            }
-            .ab:active{
-                font-style: italic;
-            }
-            .ab:visited{
-                color: red;
-            }
-        </style>
-        <a class="ab" href="index1.html">Hidden features</a>
-    </div>
-</div>
 </body>
 </html>
